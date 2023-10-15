@@ -12,32 +12,43 @@
   </head>
   <body id="login">
     <div class="login">
-      <form action="php/users.php" id="form" method="get" autocomplete="on">
+      <form action="php/users.php" id="form" method="get" autocomplete="off">
         <label for="username"
           ><p>
             <font size="5"><b>Username || E-mail</b></font>
           </p></label
         >
-        <input type="text" id="username" name="username" /><br />
+        <input
+          type="text"
+          type="email"
+          id="username"
+          name="username"
+          placeholder="Username"
+          required
+          autocomplete="off"
+        /><br />
         <label for="password"
           ><p>
             <font size="5"><b>Password</b></font>
           </p></label
         >
-        <input type="password" id="password" name="password" /><br /><br />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          required
+          autocomplete="off"
+        /><br /><br />
 
         <input id="_login" type="submit" value="Login" />
-        <div>
-          <label for="">Forget Password?</label><br />
-          <a href="reset.html"
-            ><input
-              type="submit"
-              id="fPass"
-              name="fPass"
-              value="Forget Passowrd"
-          /></a>
-        </div>
       </form>
+      <div class="fPass">
+        <label for="fPass"></label><br />
+        <a href="reset.html"
+          ><input type="submit" id="fPass" name="fPass" value="Forget Passowrd"
+        /></a>
+      </div>
       <a href="registry.html" id="registry" title="Registry"
         >If You don't have account, You can registry now here</a
       >
