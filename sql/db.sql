@@ -1,0 +1,1 @@
+create table profiles (userID int primary key auto_increment, username varchar(16), userPassword varchar(32), administration char(3) default "No");

@@ -6,10 +6,31 @@
     <title>Document</title>
 </head>
 <body>
-    <?php mysql_connect(127.0.0.1, "root", "");
+    <?php 
 
-    $sql = "SELECT * FROM `test`;";
-    $sql = "UPDATE `test` SET `id`='[value-1]',`dane`='[value-2]',`czyWażne`='[value-3]' WHERE 1"
+    $serverName = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "users";
+
+    $conn = new mysqli($serverName, $username, $password, $dbname);
+
+    if (!$conn) {
+        die("No connection". mysqli_connect_error());
+    }
+
+    $sql = "SELECT * FROM profiles";
+    $result = mysqli_query($conn, $sql);
+
+    $userID = "SELECT userID  FROM profiles";
+    $userName = "SELECT userName  FROM profiles";
+    $userPassword = "SELECT userPassword  FROM profiles";
+
+    if ($userID && $userName && $userPassword == $sql) {
+        echo "<a href='profile.html'>" .  "</a>";
+    }
+
+    mysqli_close($conn);
     ?>
 </body>
 </html>
